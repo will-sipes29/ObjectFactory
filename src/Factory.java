@@ -10,7 +10,9 @@ public class Factory {
     public Pumpkin pumpkin1;
     public Pumpkin pumpkin2;
     public Pumpkin pumpkin3;
+    public Boat sailboat;
 
+    public int randSize;
 
     public static void main(String[] args) {
         Factory a = new Factory();
@@ -24,21 +26,22 @@ public class Factory {
         System.out.println("The owner is " + owner);
         System.out.println();
 
-        pumpkin1 = new Pumpkin();
-        System.out.println("jackolantern = " + pumpkin1.isJackolantern);
-        System.out.println(pumpkin1.color);
-        System.out.println(pumpkin1.size);
+        pumpkin1 = new Pumpkin(30, "orange", true);
+        System.out.println("pumpkin1");
+        pumpkin1.printInfo();
 
-        pumpkin2 = new Pumpkin();
-        pumpkin2.color = "blue";
-        System.out.println(pumpkin2.color);
-        pumpkin2.size = pumpkin1.size * 2;
-        System.out.println(pumpkin2.size);
+        randSize = (int)(Math.random() * 101);
 
-        pumpkin3 = new Pumpkin();
-        pumpkin3.color = "green";
-        System.out.println(pumpkin3.color);
-        pumpkin3.size = pumpkin1.size * 3;
-        System.out.println(pumpkin3.size);
+        pumpkin2 = new Pumpkin(randSize, "purple", false);
+        System.out.println("pumpkin2");
+        pumpkin2.printInfo();
+
+        pumpkin3 = new Pumpkin(70, "green", false);
+        System.out.println("pumpkin3");
+        pumpkin3.printInfo();
+
+        sailboat = new Boat(70, "blue",true);
+        System.out.println("sailboat");
+        sailboat.printInfo();
     }
 }
